@@ -31,7 +31,16 @@ export class ContatosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadContato();
     this.loadTipo();
+  }
+
+  loadContato() {
+    this.contatoService.load().subscribe({
+      next: data => {
+        this.arrayContato = data;
+      }
+    });
   }
 
   loadTipo() {
@@ -54,5 +63,8 @@ export class ContatosComponent implements OnInit {
   compareTipos(tipo1: Tipo, tipo2: Tipo): boolean {
     return tipo1 && tipo2 ? tipo1.id === tipo2.id : tipo1 === tipo2;
   }
-}
 
+  getTipo(tipoId: number): Tipo | undefined {
+    return this.arrayTipo.find(t => t.id == tipoId)
+  }
+}

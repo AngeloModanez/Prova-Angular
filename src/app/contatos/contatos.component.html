@@ -46,4 +46,32 @@
       </section>
     </div>
   </form>
+  <div class="card rounded-4  p-4 mt-5">
+    <h3 class="text-center mb-4">Tabela dos Contatos</h3>
+    <table class="table table-dark table-striped-columns">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Email</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Favoritado</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider text-center" style="font-size: 14px;">
+        <tr *ngFor="let contato of arrayContato">
+          <th scope="row">{{ contato.id }}</th>
+          <td>{{ contato.nome }}</td>
+          <td>{{ contato.email }}</td>
+          <td>{{ contato.telefone }}</td>
+          <td>{{ getTipo(contato.tipoId)?.tipo }}</td>
+          <td>
+            <span *ngIf="contato.favorito" class="badge text-bg-warning w-100">Favoritado</span>
+            <span *ngIf="!contato.favorito" class="badge text-bg-secondary w-100">Não Favoritado</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </main>

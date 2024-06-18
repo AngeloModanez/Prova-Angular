@@ -12,6 +12,10 @@ export class ContatoService {
 
   constructor(private httpClient: HttpClient) { }
 
+  load(): Observable<Contato[]> {
+    return this.httpClient.get<Contato[]>(this.apiUrl)
+  }
+
   save(contato: Contato): Observable<Contato> {
     return this.httpClient.post<Contato>(this.apiUrl, contato)
   }

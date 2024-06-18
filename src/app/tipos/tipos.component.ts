@@ -25,6 +25,14 @@ export class TiposComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  loadTipo() {
+    this.tipoService.load().subscribe({
+      next: data => {
+        this.arrayTipo = data;
+      }
+    });
+  }
+
   save() {
     this.tipoService.save(this.tipoFormGroup.value).subscribe({
       next: data => {
@@ -33,5 +41,4 @@ export class TiposComponent implements OnInit {
       },
     });
   }
-
 }

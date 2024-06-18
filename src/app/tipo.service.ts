@@ -12,6 +12,10 @@ export class TipoService {
 
   constructor(private httpClient: HttpClient) { }
 
+  load(): Observable<Tipo[]> {
+    return this.httpClient.get<Tipo[]>(this.apiUrl)
+  }
+
   save(tipo: Tipo): Observable<Tipo> {
     return this.httpClient.post<Tipo>(this.apiUrl, tipo)
   }

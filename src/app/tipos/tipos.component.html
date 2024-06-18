@@ -1,1 +1,25 @@
-<p>tipos works!</p>
+<main class="container mt-4">
+  <form [formGroup]="tipoFormGroup">
+    <div class="card rounded-4 p-3">
+      <h3 class="mb-4">Cadastro de Tipos de Contatos</h3>
+      <section class="row mb-3">
+        <label for="tipo">Tipo de Contato</label>
+        <div>
+          <input class="form-control" formControlName="tipo" type="text" placeholder="Digite o nome do Tipo">
+        </div>
+      </section>
+      <section class="row mb-3">
+        <label for="descricao">Descrição do tipo</label>
+        <div>
+          <input class="form-control" formControlName="descricao" type="text" placeholder="Digite uma descrição">
+        </div>
+      </section>
+      <section class="row">
+        <div class="btn-save text-center">
+          <button class="btn btn-success w-50 mt-3" type="submit" (click)="save()">Save
+            <i class="bi bi-box-arrow-in-right"></i></button>
+        </div>
+      </section>
+    </div>
+  </form>
+</main>

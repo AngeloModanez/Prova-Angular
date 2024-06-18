@@ -23,7 +23,9 @@ export class TiposComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.loadTipo();
+  }
 
   loadTipo() {
     this.tipoService.load().subscribe({

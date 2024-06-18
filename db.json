@@ -2,9 +2,23 @@
   "tipos": [
     {
       "id": 1,
-      "tipo": "testte",
-      "descricao": "coisa"
+      "tipo": "Amigo",
+      "descricao": "Um belo amigo"
+    },
+    {
+      "id": 2,
+      "tipo": "Inimigos",
+      "descricao": "ODEIO"
     }
   ],
-  "contatos": []
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "BABABA",
+      "email": "baba@gmail.com",
+      "telefone": "+55 22 30430403434",
+      "tipoId": 2,
+      "favorito": false
+    }
+  ]
 }

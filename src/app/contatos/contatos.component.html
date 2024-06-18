@@ -1,1 +1,49 @@
-<p>contatos works!</p>
+<main class="container mt-4">
+  <form [formGroup]="contatoFormGroup">
+    <div class="card rounded-4 p-3">
+      <h3 class="mb-4">Cadastro de Contatos</h3>
+      <section class="row mb-3">
+        <label for="nome">Nome do Contato</label>
+        <div>
+          <input class="form-control" formControlName="nome" type="text" placeholder="Digite o nome do seu contato">
+        </div>
+      </section>
+      <section class="row mb-3">
+        <label for="email">Email do Contato</label>
+        <div>
+          <input class="form-control" formControlName="email" type="text" placeholder="Digite o email do seu conato">
+        </div>
+      </section>
+      <section class="row mb-3">
+        <label for="telefone">Telefone do Contato</label>
+        <div>
+          <input class="form-control" formControlName="telefone" type="text"
+            placeholder="Digite o número do seu conato">
+        </div>
+      </section>
+      <section class="row mb-3">
+        <label for="tipoId">Tipo do Contato</label>
+        <div>
+          <select class="form-select" formControlName="tipoId" [compareWith]="compareTipos">
+            <option *ngFor="let tipo of arrayTipo" [ngValue]="tipo.id">{{tipo.tipo}}</option>
+          </select>
+        </div>
+      </section>
+      <section class="row mb-3">
+        <div class="form-check">
+            <h5 class="form-label">Favoritar:</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" formControlName="favorito">
+            <label class="form-check-label"><i class="bi bi-star-fill"></i></label>
+          </div>
+        </div>
+      </section>
+      <section class="row">
+        <div class="btn-save text-center">
+          <button class="btn btn-success w-50 mt-3" type="submit" (click)="save()">Save
+            <i class="bi bi-box-arrow-in-right"></i></button>
+        </div>
+      </section>
+    </div>
+  </form>
+</main>

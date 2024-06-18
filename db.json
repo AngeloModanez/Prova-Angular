@@ -11,5 +11,14 @@
       "descricao": "ODEIO"
     }
   ],
-  "contatos": []
+  "contatos": [
+    {
+      "id": 1,
+      "nome": "Angelo Ferraz",
+      "email": "angelo@gmail.com",
+      "telefone": "+11 55 3123123",
+      "tipoId": 1,
+      "favorito": true
+    }
+  ]
 }

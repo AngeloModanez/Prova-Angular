@@ -1,6 +1,6 @@
 <main class="container mt-4">
   <form [formGroup]="contatoFormGroup">
-    <div class="card rounded-4 p-3">
+    <div class="card rounded-4 border-3 border-success p-3">
       <h3 class="mb-4">Cadastro de Contatos</h3>
       <section class="row mb-3">
         <label for="nome">Nome do Contato</label>
@@ -9,16 +9,18 @@
         </div>
       </section>
       <section class="row mb-3">
-        <label for="email">Email do Contato</label>
-        <div>
-          <input class="form-control" formControlName="email" type="text" placeholder="Digite o email do seu conato">
+        <div class="col">
+          <label for="email">Email do Contato</label>
+          <div>
+            <input class="form-control" formControlName="email" type="text" placeholder="Digite o email do seu conato">
+          </div>
         </div>
-      </section>
-      <section class="row mb-3">
-        <label for="telefone">Telefone do Contato</label>
-        <div>
-          <input class="form-control" formControlName="telefone" type="text"
-            placeholder="Digite o número do seu conato">
+        <div class="col">
+          <label for="telefone">Telefone do Contato</label>
+          <div>
+            <input class="form-control" formControlName="telefone" type="text"
+              placeholder="Digite o número do seu conato">
+          </div>
         </div>
       </section>
       <section class="row mb-3">
@@ -34,7 +36,8 @@
           <h5 class="form-label">Favoritar:</h5>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" formControlName="favorito">
-            <label class="form-check-label"><i class="bi bi-star-fill"></i></label>
+            <label class="form-check-label"><i class="bi bi-star-fill text-warning"></i> Meu Favorito <i
+                class="bi bi-star-fill text-warning"></i></label>
           </div>
         </div>
       </section>
@@ -46,7 +49,7 @@
       </section>
     </div>
   </form>
-  <div class="card rounded-4  p-4 mt-5">
+  <div class="card rounded-4 border-3 border-success p-3 mt-5 mb-4">
     <h3 class="text-center mb-4">Tabela dos Contatos</h3>
     <table class="table table-dark table-striped-columns">
       <thead>
@@ -60,7 +63,7 @@
           <th scope="col">Deletar</th>
         </tr>
       </thead>
-      <tbody class="table-group-divider text-center" style="font-size: 14px;">
+      <tbody class="table-group-divider text-center">
         <tr *ngFor="let contato of arrayContato">
           <th scope="row">{{ contato.id }}</th>
           <td>{{ contato.nome }}</td>
@@ -72,7 +75,7 @@
             <span *ngIf="!contato.favorito" class="badge text-bg-secondary w-100">Não Favoritado</span>
           </td>
           <td>
-            <button class="btn btn-danger me-2" (click)="delete(contato)"><i class="bi bi-trash"></i></button>
+            <button class="btn btn-danger me-2 w-75" (click)="delete(contato)"><i class="bi bi-trash"></i></button>
           </td>
         </tr>
       </tbody>

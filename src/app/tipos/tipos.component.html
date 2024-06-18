@@ -1,6 +1,6 @@
 <main class="container mt-4">
   <form [formGroup]="tipoFormGroup">
-    <div class="card rounded-4 p-3">
+    <div class="card rounded-4 border-3 border-success p-3">
       <h3 class="mb-4">Cadastro de Tipos de Contatos</h3>
       <section class="row mb-3">
         <label for="tipo">Tipo de Contato</label>
@@ -11,7 +11,7 @@
       <section class="row mb-3">
         <label for="descricao">Descrição do tipo</label>
         <div>
-          <input class="form-control" formControlName="descricao" type="text" placeholder="Digite uma descrição">
+          <textarea class="form-control" formControlName="descricao" type="text" rows="4" placeholder="Digite uma descrição"></textarea>
         </div>
       </section>
       <section class="row">
@@ -22,7 +22,7 @@
       </section>
     </div>
   </form>
-  <div class="card rounded-4  p-4 mt-5">
+  <div class="card rounded-4 border-3 border-success p-3 mt-5 mb-4">
     <h3 class="text-center mb-4">Tabela dos Tipos</h3>
     <table class="table table-dark table-striped-columns">
       <thead>
@@ -32,7 +32,7 @@
           <th scope="col">Descrição</th>
         </tr>
       </thead>
-      <tbody class="table-group-divider text-center" style="font-size: 14px;">
+      <tbody class="table-group-divider text-center">
         <tr *ngFor="let tipo of arrayTipo">
           <th scope="row">{{ tipo.id }}</th>
           <td>{{ tipo.tipo }}</td>

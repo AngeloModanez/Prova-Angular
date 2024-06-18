@@ -11,22 +11,5 @@
       "descricao": "ODEIO"
     }
   ],
-  "contatos": [
-    {
-      "id": 1,
-      "nome": "BABABA",
-      "email": "baba@gmail.com",
-      "telefone": "+55 22 30430403434",
-      "tipoId": 2,
-      "favorito": false
-    },
-    {
-      "id": 2,
-      "nome": "Juliana",
-      "email": "juju@gmail.com",
-      "telefone": "+11 55 2313123",
-      "tipoId": 1,
-      "favorito": true
-    }
-  ]
+  "contatos": []
 }

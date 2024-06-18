@@ -31,7 +31,7 @@
       </section>
       <section class="row mb-3">
         <div class="form-check">
-            <h5 class="form-label">Favoritar:</h5>
+          <h5 class="form-label">Favoritar:</h5>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" formControlName="favorito">
             <label class="form-check-label"><i class="bi bi-star-fill"></i></label>
@@ -57,6 +57,7 @@
           <th scope="col">Telefone</th>
           <th scope="col">Tipo</th>
           <th scope="col">Favoritado</th>
+          <th scope="col">Deletar</th>
         </tr>
       </thead>
       <tbody class="table-group-divider text-center" style="font-size: 14px;">
@@ -69,6 +70,9 @@
           <td>
             <span *ngIf="contato.favorito" class="badge text-bg-warning w-100">Favoritado</span>
             <span *ngIf="!contato.favorito" class="badge text-bg-secondary w-100">Não Favoritado</span>
+          </td>
+          <td>
+            <button class="btn btn-danger me-2" (click)="delete(contato)"><i class="bi bi-trash"></i></button>
           </td>
         </tr>
       </tbody>

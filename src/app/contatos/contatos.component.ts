@@ -60,6 +60,12 @@ export class ContatosComponent implements OnInit {
     });
   }
 
+  delete(contato: Contato) {
+    this.contatoService.delete(contato).subscribe({
+      next: () => this.loadContato(),
+    })
+  }
+
   compareTipos(tipo1: Tipo, tipo2: Tipo): boolean {
     return tipo1 && tipo2 ? tipo1.id === tipo2.id : tipo1 === tipo2;
   }

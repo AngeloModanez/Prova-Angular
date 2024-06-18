@@ -19,4 +19,8 @@ export class ContatoService {
   save(contato: Contato): Observable<Contato> {
     return this.httpClient.post<Contato>(this.apiUrl, contato)
   }
+
+  delete(contato: Contato): Observable<void> {
+    return this.httpClient.delete<void>(`${this.apiUrl}/${contato.id}`)
+  }
 }
